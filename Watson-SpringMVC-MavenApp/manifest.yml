@@ -1,0 +1,14 @@
+---
+applications:
+- name: Watson-SpringMVC-MavenApp23
+  memory: 512M
+  instances: 1
+  buildpack: liberty-for-java_v3_4_1-20161030-2241
+  path: target/Watson-SpringMVC-MavenApp.war
+env:
+  FACEAPIKEY: 237c89fe498bd97b337b0246d8604537cf35b984
+  TEXTPASSWORD: 8b5qJv6ubIAf
+  TEXTUSERNAME: 7759c1e2-4ca9-4e1b-9fad-7544188fc645 
+
+
+  
