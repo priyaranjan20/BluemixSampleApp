@@ -36,10 +36,8 @@
 					</div>
 					<div class="panel-body">
 						<form:form class="form-inline" method="post">
-							<div class="form-group">
-								<form:textarea path="text" rows="10" cols="49"
+								<form:textarea path="text" rows="10"  style="min-width: 100%"
 									class="form-control" />
-							</div>
 						</form:form>
 						<br>
 						<div align="center">
