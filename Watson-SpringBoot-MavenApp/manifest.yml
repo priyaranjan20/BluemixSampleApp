@@ -1,6 +1,6 @@
 ---
 applications:
-- name: Watson-SpringBoot-MavenApp234
+- name: Watson-SpringBoot-MavenApp2345
   memory: 512M
   instances: 1
   buildpack: liberty-for-java_v3_4_1-20161030-2241
