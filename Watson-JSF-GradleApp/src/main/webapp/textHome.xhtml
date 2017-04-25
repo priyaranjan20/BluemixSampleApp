@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Text To Speech</title>
+
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</h:head>
+<body background="#{resource['textbg.jpg']}">
+	<br />
+	<br />
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-3"></div>
+			<div class="col-sm-6 col-md-6">
+				<h:graphicImage name="TTStag.png" />
+			</div>
+			<div class="col-sm-3 col-md-3"></div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-1 col-md-1"></div>
+			<div class="col-sm-4 col-md-4">
+				<div class="panel  panel-primary">
+					<div class="panel-heading" style="background: #800080;">
+						<h4>Enter The Text</h4>
+					</div>
+					<div class="panel-body">
+						<h:form class="form-inline" method="post">
+							<div class="form-group">
+								<h:inputTextarea value="#{textAction.text}" id="text" rows="10"
+									cols="49" class="form-control textarea" />
+							</div>
+
+						<div align="center">
+
+							<h:commandLink class="btn btn-primary btn-lg speak-button">
+								<span class="glyphicon glyphicon-volume-up"></span> Speak
+									<f:ajax execute="text" listener="#{textAction.speak()}"
+									 render="mediaPanel" />
+							</h:commandLink>
+
+							<h:outputText escape="false" value="&amp;nbsp;"/>
+							<h:outputText escape="false" value="&amp;nbsp;"/>
+							<h:outputText escape="false" value="&amp;nbsp;"/>
+							<h:outputText escape="false" value="&amp;nbsp;"/>
+
+							<h:commandButton value="Download" class="btn btn-primary btn-lg download-button"
+									action="#{textAction.download()}">
+									</h:commandButton>
+<!-- 							<button class="btn btn-primary btn-lg download-button"> -->
+<!-- 								<span class="glyphicon glyphicon-download-alt"></span> Download -->
+<!-- 							</button> -->
+						</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 col-md-3">
+				<h:graphicImage name="speaker.png" height="300" width="300" />
+
+			</div>
+			<div class="col-sm-3 col-md-3">
+				<div class="panel  panel-primary">
+					<div class="panel-heading" style="background: #800080;">
+						<h4>Output</h4>
+					</div>
+					<div class="panel-body">
+						<h:panelGrid id="mediaPanel">
+							<div class=" audiodiv">
+								<audio autoplay="autoplay" type="audio/wav" preload="auto"
+									src="#{textAction.audioStr}" autobuffer="autobuffer"
+									controls="controls" class="audio"></audio>
+							</div>
+						</h:panelGrid>
+						<div style="display: none" class=" error">
+							<div class="form-group row">
+								<p class="errorMsg">Error processing the request.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-6"></div>
+			<div class="col-sm-1 col-md-1">
+					
+				<h:link outcome="index" class="btn btn-primary btn-lg">
+					<span class="glyphicon glyphicon-home"></span> 
+					Home
+			</h:link>
+			</div>
+			<div class="col-sm-5 col-md-5"></div>
+		</div>
+	</div>
+
+
+</body>
+</html>

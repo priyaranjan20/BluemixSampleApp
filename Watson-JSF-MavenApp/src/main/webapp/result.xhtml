@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Face Result</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body background="#{resource['crowd.jpg']}">
+
+	<div class="container">
+		<br /> <br /> <br /> <br />
+		<!-- <br><br><br><br> -->
+		<div class="row">
+			<div class="col-md-4">
+				<h:graphicImage name="fr.png"/> <h:graphicImage name="watson.png"/>
+				<br /> <br /> <br />
+				<h:link outcome="index" class="btn btn-primary btn-lg">
+					<span class="glyphicon glyphicon-home"></span> 
+					Home
+		</h:link>
+
+				<h:outputText escape="false" value="&amp;nbsp;"/>
+				<h:outputText escape="false" value="&amp;nbsp;"/>
+
+				<h:link outcome="imageHome" class="btn btn-primary btn-lg">
+					<span class="glyphicon glyphicon-home"></span> 
+					Try Another Image
+		</h:link>
+
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-7">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2>Name: #{imageAction.img.name}</h2>
+					</div>
+					<div class="panel-body" style="background: #ced9ea;">
+						<div class="row">
+
+							<div class="col-sm-5">
+								<div class="row">
+									<h3>&nbsp; Gender : #{imageAction.img.gender}</h3>
+								</div>
+								<div class="row">
+									<h3>&nbsp; Max Age : #{imageAction.img.max_age}</h3>
+								</div>
+								<div class="row">
+									<h3>&nbsp; Min Age : #{imageAction.img.min_age}</h3>
+								</div>
+								<!--   bf<br>asf<br>fedf -->
+							</div>
+							<div class="col-sm-4">
+								<img src="#{imageAction.img.url}" style="width: 304px; height: 304px" />
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

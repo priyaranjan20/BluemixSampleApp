@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body {
+	background-image: url('#{resource['watsonbg.png']}');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: black;
+}
+
+.btn1 {
+	position: absolute;
+	top: 70%;
+	left: 40%;
+	transform: translate(-30%, -60%);
+}
+
+.btn-xl {
+	padding: 10px 20px;
+	font-size: 20px;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+	<div class="btn1">
+<!-- 		<h:link outcome="textHome" class="btn btn-info btn-xl btn-block"> -->
+<!-- 			<h2> -->
+<!-- 				<b>Text To Speech</b> -->
+<!-- 			</h2> -->
+<!-- 		</h:link> -->
+
+		<h:form>
+		<h:commandLink action="#{textAction.navigate()}" class="btn btn-info btn-xl btn-block" >
+					<h2>
+				<b>Text To Speech</b>
+			</h2>
+		</h:commandLink>
+		</h:form>
+		<br /> <br /> <br />
+		<h:link outcome="imageHome" class="btn btn-info btn-xl btn-block">
+			<h2>
+				<b>Facial Recognition</b>
+			</h2>
+		</h:link>
+	</div>
+
+	<div class="btn2"></div>
+
+</body>
+</html>

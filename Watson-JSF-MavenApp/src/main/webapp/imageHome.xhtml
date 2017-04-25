@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Face Recognition</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body background="#{resource['crowd.jpg']}">
+
+	<div class="container-fluid">
+		<br/>
+		<br/>
+		<br/>
+		<br/> <br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="col-sm-1 col-md-1"></div>
+			<div class="col-sm-4 col-md-4">
+				<h:graphicImage name="fr.png"/> <h:graphicImage name="watson.png"/>
+			</div>
+			<div class="col-sm-2 col-md-2"></div>
+			<div class="col-sm-3 col-md-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4>Enter Image URL</h4>
+					</div>
+					<div class="panel-body" style="background: #ced9ea;">
+						<h:form class="form-inline" method="post">
+							<div class="form-group">
+								<h:inputText value="#{imageAction.img.url}" class="form-control" />
+							</div>
+							<h:commandButton value="Submit" action="#{imageAction.process()}"></h:commandButton>
+						</h:form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-2"></div>
+		</div>
+	</div>
+
+</body>
+</html>
